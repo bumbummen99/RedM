@@ -41,6 +41,8 @@ if [ -z "${NO_LICENSE_KEY}" ]; then
     CONFIG_ARGS="$CONFIG_ARGS +set sv_licenseKey ${LICENSE_KEY}"
 fi
 
+echo "Server config args \"${CONFIG_ARGS}\""
+
 exec /opt/cfx-server/ld-musl-x86_64.so.1 \
     --library-path "/usr/lib/v8/:/lib/:/usr/lib/" \
     -- \
