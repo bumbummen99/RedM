@@ -23,7 +23,6 @@ if [ -z "$NO_ONESYNC" ]; then
     ONESYNC_ARGS="+set onesync on +set onesync_population true"
 fi
 
-CONFIG_ARGS=
 if [ -z "${NO_DEFAULT_CONFIG}" ]; then
     CONFIG_ARGS="$CONFIG_ARGS $ONESYNC_ARGS +exec /config/server.cfg"
 fi
