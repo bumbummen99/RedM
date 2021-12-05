@@ -11,6 +11,8 @@ services:
     volumes:
       - "./resources:/config/resources"
       - "./server.cfg:/root/server.cfg"
+    networks:
+      - fivem
     ports:
       - "30120:30120"
       - "30120:30120/udp"
@@ -20,3 +22,23 @@ services:
       NO_LICENSE_KEY: ${NO_LICENSE_KEY}
       RCON_PASSWORD: ${RCON_PASSWORD}
       STEAM_API_KEY: ${STEAM_API_KEY}
+  mysql:
+    image: 'mysql:8.0'
+    ports:
+      - '${FORWARD_DB_PORT:-3306}:3306'
+    environment:
+      MYSQL_ROOT_PASSWORD: '${DB_PASSWORD}'
+      MYSQL_DATABASE: '${DB_DATABASE}'
+      MYSQL_USER: '${DB_USERNAME}'
+      MYSQL_PASSWORD: '${DB_PASSWORD}'
+      MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
+    volumes:
+      - 'sailmysql:/var/lib/mysql'
+    networks:
+      - fivem
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping"]
+      
+networks:
+    fivem:
+        driver: bridge
