@@ -19,6 +19,9 @@ jobs:
       - 
         name: Run the image
         run: docker-compose up -d
+      - 
+        name: Run the image
+        run: docker-compose logs
       -
         name: Stop the container
         run: docker-compose down
