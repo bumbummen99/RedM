@@ -1,4 +1,4 @@
-version: '3'
+#version: '3'
 
 services:
   fivem:
@@ -8,7 +8,8 @@ services:
     stdin_open: true
     tty: true
     volumes:
-      - "./config:/config"
+      - "./resources:/config/resources"
+      - "./server.cfg:/config/server.cfg"
     ports:
       - "30120:30120"
       - "30120:30120/udp"
