@@ -6,7 +6,7 @@ fi
 
 # Copy and overwrite default resources if it does not exist
 echo "Copying default resources..."
-cp -r /opt/cfx-server-data/* /config/resources
+cp -r /opt/cfx-server-data/resources/* /config/resources
 
 # Remove .gitkeep from resources in case it is mounted
 if [ ! -e "/config/resources/.gitkeep" ]; then
