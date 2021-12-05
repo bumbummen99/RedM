@@ -3,7 +3,7 @@
 services:
   fivem:
     build:
-      context: ./docker
+      context: docker
       dockerfile: docker/Dockerfile
     container_name: fivem
     restart: always
