@@ -13,3 +13,12 @@ jobs:
       -
         name: Build Image
         run: docker-compose build
+      -
+        name: Create .env
+        run: cp .env.example .env && echo "NO_LICENSE_KEY=true" >> .env
+      - 
+        name: Run the image
+        run: docker-compose up -d
+      -
+        name: Stop the container
+        run: docker-compose down
