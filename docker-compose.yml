@@ -17,5 +17,6 @@ services:
     environment:
       CONFIG_ARGS: "+set gamename rdr3"
       LICENSE_KEY: ${LICENSE_KEY}
+      NO_LICENSE_KEY: ${NO_LICENSE_KEY}
       RCON_PASSWORD: ${RCON_PASSWORD}
       STEAM_API_KEY: ${STEAM_API_KEY}
