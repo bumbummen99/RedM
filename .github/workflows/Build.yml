@@ -24,7 +24,7 @@ jobs:
         run: docker-compose logs
       - 
         name: List server-data files
-        run: docker-compose run fivem ls -la /opt/cfx-server-data
+        run: docker exec -it fivem ls -la /opt/cfx-server-data
       -
         name: Stop the container
         run: docker-compose down
