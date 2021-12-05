@@ -10,7 +10,7 @@ services:
     tty: true
     volumes:
       - "./resources:/config/resources"
-      - "./server.cfg:/config/server.cfg"
+      - "./server.cfg:/root/server.cfg"
     ports:
       - "30120:30120"
       - "30120:30120/udp"
