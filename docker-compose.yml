@@ -14,5 +14,7 @@ services:
     ports:
       - "30120:30120"
       - "30120:30120/udp"
+    env_file:
+    - .env
     environment:
       CONFIG_ARGS: "+set gamename rdr3"
