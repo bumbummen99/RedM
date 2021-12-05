@@ -18,7 +18,7 @@ fi
 cp /config/server.cfg /tmp/server.cfg
 sed -i "s/{RCON_PASSWORD}/${RCON_PASSWORD}/g" /tmp/server.cfg
 sed -i "s/{STEAM_API_KEY}/${STEAM_API_KEY}/g" /tmp/server.cfg
-cp  /tmp/server.cfg /config/server.cfg
+mv  /tmp/server.cfg /config/server.cfg
 
 if [ -z "$NO_ONESYNC" ]; then
     ONESYNC_ARGS="+set onesync on +set onesync_population true"
