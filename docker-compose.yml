@@ -3,8 +3,7 @@
 services:
   fivem:
     build:
-      context: docker
-      dockerfile: docker/Dockerfile
+      context: ./docker
     container_name: fivem
     restart: always
     stdin_open: true
