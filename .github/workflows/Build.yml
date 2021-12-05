@@ -15,7 +15,7 @@ jobs:
         run: docker-compose build
       -
         name: Create .env
-        run: cp .env.example .env && echo "NO_LICENSE_KEY=true" >> .env
+        run: cp .env.example .env && echo "NO_LICENSE_KEY=true" >> .env && sed -i "s/RCONPassword/password/g" && sed -i "s/SteamAPIKey/${secrets.STEAM_API_KEY}/g"
       - 
         name: Run the image
         run: docker-compose up -d
