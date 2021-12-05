@@ -9,7 +9,7 @@ echo "Copying default resources..."
 cp -r /opt/cfx-server-data/* /config/resources
 
 # Copy default config if it does not exist
-if ! -f "/config/server.cfg"; then
+if [ ! -e "/config/server.cfg" ]; then
     echo "Creating default config..."
     cp -r /opt/cfx-server-data/server.cfg /config/resources
 fi
