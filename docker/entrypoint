@@ -15,7 +15,7 @@ if [ ! -e "/config/server.cfg" ]; then
 fi
 
 # Prepare config with ENV values
-sed -i "s/{RCON_PASS}/${RCON_PASSWORD}/g" /config/server.cfg;
+sed -i "s/{RCON_PASS}/${RCON_PASSWORD}/g" /config/server.cfg
 sed -i "s/{STEAM_API_KEY}/${STEAM_API_KEY}/g" /config/server.cfg
 
 if [ -z "$NO_ONESYNC" ]; then
