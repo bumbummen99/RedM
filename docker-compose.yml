@@ -33,7 +33,7 @@ services:
       MYSQL_PASSWORD: 'fivem'
       MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
     volumes:
-      - 'sailmysql:/var/lib/mysql'
+      - './mysql:/var/lib/mysql'
     networks:
       - fivem
     healthcheck:
