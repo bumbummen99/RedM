@@ -50,3 +50,5 @@ EXPOSE 30120
 CMD [""]
 
 ENTRYPOINT ["/sbin/tini", "--", "/usr/bin/entrypoint"]
+
+HEALTHCHECK CMD curl --fail http://127.0.0.1:30120/info.json || exit 1
