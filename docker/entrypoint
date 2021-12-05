@@ -1,0 +1,50 @@
+#!/bin/sh
+
+if [ -n "$DEBUG" ]; then
+    set -x
+fi
+
+# Copy and overwrite default resources if it does not exist
+echo "Copying default resources..."
+cp -r /opt/cfx-server-data/* /config/resources
+
+# Copy default config if it does not exist
+if ! -f "/config/server.cfg"; then
+    echo "Creating default config..."
+    cp -r /opt/cfx-server-data/server.cfg /config/resources
+fi
+
+# Prepare config with ENV values
+sed -i "s/{RCON_PASS}/${RCON_PASSWORD}/g" /config/server.cfg;
+sed -i "s/{STEAM_API_KEY}/${STEAM_API_KEY}/g" /config/server.cfg
+
+if [ -z "$NO_ONESYNC" ]; then
+    ONESYNC_ARGS="+set onesync on +set onesync_population true"
+fi
+
+CONFIG_ARGS=
+if [ -z "${NO_DEFAULT_CONFIG}" ]; then
+    CONFIG_ARGS="$CONFIG_ARGS $ONESYNC_ARGS +exec /config/server.cfg"
+fi
+
+# English is hard
+if [ -z "${NO_LICENSE_KEY}${NO_LICENCE_KEY}" ]; then
+    if [ -z "${LICENSE_KEY}" ] && [ -n "${LICENCE_KEY}" ]; then
+        LICENSE_KEY="${LICENCE_KEY}"
+    fi
+
+    if [ -z "${LICENSE_KEY}" ]; then
+        echo "License key not found in environment, please create one at https://keymaster.fivem.net!"
+        exit 1
+    fi
+
+    CONFIG_ARGS="$CONFIG_ARGS +set sv_licenseKey ${LICENSE_KEY}"
+fi
+
+exec /opt/cfx-server/ld-musl-x86_64.so.1 \
+    --library-path "/usr/lib/v8/:/lib/:/usr/lib/" \
+    -- \
+    /opt/cfx-server/FXServer \
+        +set citizen_dir /opt/cfx-server/citizen/ \
+        $CONFIG_ARGS \
+        $*
