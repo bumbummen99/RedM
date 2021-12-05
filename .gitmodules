@@ -1,35 +1,27 @@
-[submodule "MySQLAsync"]
-  path = resources/[mysql-async]
-  url = https://github.com/amakuu/mysql-async-temporary.git
-
-[submodule "ESPlugin"]
-  path = resources/[esplugin_mysql]
-  url = https://github.com/RedEM-RP/esplugin_mysql.git
-
-[submodule "RedEM"]
-  path = resources/[redem]
-  url = https://github.com/kanersps/redem.git
-
-[submodule "RedEMRP"]
-  path = resources/[redemrp]/redem_roleplay
-  url = https://github.com/RedEM-RP/redem_roleplay.git
-
-[submodule "RedEMRPRespawn"]
-  path = resources/[redemrp]/redemrp_respawn
-  url = https://github.com/RedEM-RP/redemrp_respawn.git
-
-[submodule "RedEMRPIdentity"]
-  path = resources/[redemrp]/redemrp_identity
-  url = https://github.com/RedEM-RP/redemrp_identity.git
-
-[submodule "RedEMRPInventory"]
-  path = resources/[redemrp]/redemrp_inventory
-  url = https://github.com/RedEM-RP/redemrp_inventory.git
-
-[submodule "pNotify"]
-  path = resources/[pNotify]
-  url = https://github.com/Nick78111/pNotify.git
-
-[submodule "RedEMRPDialog"]
-  path = resources/[redemrp]/redemrp_dialog
-  url = https://github.com/RedEM-RP/redemrp_dialog.git
+[submodule "resources/[esplugin_mysql]"]
+	path = resources/[esplugin_mysql]
+	url = https://github.com/RedEM-RP/esplugin_mysql.git
+[submodule "resources/[mysql-async]"]
+	path = resources/[mysql-async]
+	url = https://github.com/amakuu/mysql-async-temporary.git
+[submodule "resources/[redem]"]
+	path = resources/[redem]
+	url = https://github.com/kanersps/redem.git
+[submodule "resources/{redemrp]/redem_roleplay"]
+	path = resources/{redemrp]/redem_roleplay
+	url = https://github.com/RedEM-RP/redem_roleplay
+[submodule "resources/{redemrp]/redemrp_respawn"]
+	path = resources/{redemrp]/redemrp_respawn
+	url = https://github.com/RedEM-RP/redemrp_respawn.git
+[submodule "resources/{redemrp]/redemrp_identity"]
+	path = resources/{redemrp]/redemrp_identity
+	url = https://github.com/RedEM-RP/redemrp_identity.git
+[submodule "resources/[pNotify]"]
+	path = resources/[pNotify]
+	url = https://github.com/Nick78111/pNotify.git
+[submodule "resources/{redemrp]/redemrp_inventory"]
+	path = resources/{redemrp]/redemrp_inventory
+	url = https://github.com/RedEM-RP/redemrp_inventory.git
+[submodule "resources/{redemrp]/redemrp_dialog"]
+	path = resources/{redemrp]/redemrp_dialog
+	url = https://github.com/RedEM-RP/redemrp_dialog.git
