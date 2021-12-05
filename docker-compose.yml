@@ -14,7 +14,8 @@ services:
     ports:
       - "30120:30120"
       - "30120:30120/udp"
-    env_file:
-    - ./.env
     environment:
       CONFIG_ARGS: "+set gamename rdr3"
+      LICENSE_KEY: ${LICENSE_KEY}
+      RCON_PASSWORD: ${RCON_PASSWORD}
+      STEAM_API_KEY: ${STEAM_API_KEY}
