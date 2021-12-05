@@ -2,7 +2,9 @@
 
 services:
   fivem:
-    image: spritsail/fivem
+    build:
+      context: ./docker
+      dockerfile: docker/Dockerfile
     container_name: fivem
     restart: always
     stdin_open: true
