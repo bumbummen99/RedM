@@ -21,10 +21,10 @@ RUN wget -O- http://runtime.fivem.net/artifacts/fivem/build_proot_linux/master/$
 
 ADD server.cfg opt/cfx-server-data
 ADD entrypoint usr/bin/entrypoint
-ADD wait-for-it usr/bin/wait-for-it
+ADD wait-for-mysql usr/bin/wait-for-mysql
 
 RUN chmod +x /output/usr/bin/entrypoint
-RUN chmod +x /output/usr/bin/wait-for-it
+RUN chmod +x /output/usr/bin/wait-for-mysql
 
 #================
 
@@ -51,6 +51,6 @@ EXPOSE 30120
 # Default to an empty CMD, so we can use it to add seperate args to the binary
 CMD [""]
 
-ENTRYPOINT ["/usr/bin/wait-for-it -h mysql -p 3306 -t 90", "/sbin/tini", "--", "/usr/bin/entrypoint"]
+ENTRYPOINT ["/sbin/tini", "--", "/usr/bin/wait-for-mysql", "&&", "/usr/bin/entrypoint"]
 
 HEALTHCHECK CMD curl --fail http://127.0.0.1:30120/info.json || exit 1
