@@ -22,6 +22,7 @@ services:
       CONFIG_ARGS: '+set gamename rdr3 +set sv_enforceGameBuild 1436 +set sv_projectName "${SERVER_NAME}" +set sv_projectDesc "${SERVER_DESC}"'
       LICENSE_KEY: ${LICENSE_KEY}
       NO_LICENSE_KEY: ${NO_LICENSE_KEY}
+      NO_ONESYNC: ${NO_ONESYNC}
       RCON_PASSWORD: ${RCON_PASSWORD}
       STEAM_API_KEY: ${STEAM_API_KEY}
       MYSQL_DATABASE: ${MYSQL_DATABASE}
