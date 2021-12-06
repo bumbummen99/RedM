@@ -37,3 +37,6 @@
 [submodule "resources/[redemrp]/redemrp_progressbars"]
 	path = resources/[redemrp]/redemrp_progressbars
 	url = https://github.com/RedEM-RP/redemrp_progressbars.git
+[submodule "resources/[redemrp]/redemrp_shops"]
+	path = resources/[redemrp]/redemrp_shops
+	url = https://github.com/RedEM-RP/redemrp_shops.git
