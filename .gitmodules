@@ -4,8 +4,8 @@
 [submodule "resources/mysql-async"]
 	path = resources/mysql-async
 	url = https://github.com/amakuu/mysql-async-temporary.git
-[submodule "resources/[redem]"]
-	path = resources/[redem]
+[submodule "resources/redem"]
+	path = resources/redem
 	url = https://github.com/kanersps/redem.git
 [submodule "resources/[redemrp]/redem_roleplay"]
 	path = resources/[redemrp]/redem_roleplay
