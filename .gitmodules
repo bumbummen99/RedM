@@ -52,3 +52,6 @@
 [submodule "resources/[redemrp]/redemrp_properties"]
 	path = resources/[redemrp]/redemrp_properties
 	url = https://github.com/RedEM-RP/redemrp_properties
+[submodule "resources/[redemrp]/redemrp_farmerjob"]
+	path = resources/[redemrp]/redemrp_farmerjob
+	url = https://github.com/RedEM-RP/redemrp_farmerjob.git
