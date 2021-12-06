@@ -18,7 +18,7 @@
 	url = https://github.com/RedEM-RP/redemrp_identity.git
 [submodule "resources/[pNotify]"]
 	path = resources/[pNotify]
-	url = https://github.com/Nick78111/pNotify.git
+	url = https://github.com/bumbummen99/pNotify.git
 [submodule "resources/[redemrp]/redemrp_inventory"]
 	path = resources/[redemrp]/redemrp_inventory
 	url = https://github.com/RedEM-RP/redemrp_inventory.git
