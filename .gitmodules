@@ -40,3 +40,6 @@
 [submodule "resources/[redemrp]/redemrp_shops"]
 	path = resources/[redemrp]/redemrp_shops
 	url = https://github.com/RedEM-RP/redemrp_shops.git
+[submodule "resources/[redemrp]/redemrp_status"]
+	path = resources/[redemrp]/redemrp_status
+	url = https://github.com/RedEM-RP/redemrp_status.git
