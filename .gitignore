@@ -3,3 +3,12 @@
 
 # Runtime
 mysql
+
+# Default resources
+resources/[gamemodes]
+resources/[system]
+resources/[test]
+resources/[managers]
+resources/[local]
+resources/[gameplay]
+resources/[chat]
