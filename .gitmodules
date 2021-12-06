@@ -27,7 +27,7 @@
 	url = https://github.com/RedEM-RP/redemrp_dialog.git
 [submodule "resources/[redemrp]/redemrp_skin"]
 	path = resources/[redemrp]/redemrp_skin
-	url = https://github.com/RedEM-RP/redemrp_skin.git
+	url = https://github.com/bumbummen99/redemrp_skin.git
 [submodule "resources/[redemrp]/redemrp_clothing"]
 	path = resources/[redemrp]/redemrp_clothing
 	url = https://github.com/RedEM-RP/redemrp_clothing.git
