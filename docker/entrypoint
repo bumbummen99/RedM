@@ -26,6 +26,7 @@ sed -i "s/{STEAM_API_KEY}/${STEAM_API_KEY}/g" /config/server.cfg
 sed -i "s/{MYSQL_DATABASE}/${MYSQL_DATABASE}/g" /config/server.cfg
 sed -i "s/{MYSQL_USER}/${MYSQL_USER}/g" /config/server.cfg
 sed -i "s/{MYSQL_PASSWORD}/${MYSQL_PASSWORD}/g" /config/server.cfg
+sed -i "s/{SERVER_NAME}/${SERVER_NAME}/g" /config/server.cfg
 
 if [ -z "$NO_ONESYNC" ]; then
     ONESYNC_ARGS="+set onesync on +set onesync_population true"
