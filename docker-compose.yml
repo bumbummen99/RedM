@@ -8,37 +8,43 @@ services:
     restart: always
     stdin_open: true
     tty: true
+    depends_on:
+      - 'mysql'
     volumes:
-      - "./resources:/config/resources"
-      - "./server.cfg:/root/server.cfg"
+      - './resources:/config/resources'
+      - './server.cfg:/root/server.cfg'
     networks:
       - fivem
     ports:
-      - "30120:30120"
-      - "30120:30120/udp"
+      - '30120:30120'
+      - '30120:30120/udp'
     environment:
-      CONFIG_ARGS: "+set gamename rdr3"
+      CONFIG_ARGS: '+set gamename rdr3'
       LICENSE_KEY: ${LICENSE_KEY}
       NO_LICENSE_KEY: ${NO_LICENSE_KEY}
       RCON_PASSWORD: ${RCON_PASSWORD}
       STEAM_API_KEY: ${STEAM_API_KEY}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
   mysql:
     image: 'mysql:8.0'
+    command: --default-authentication-plugin=mysql_native_password
     ports:
       - '${FORWARD_DB_PORT:-3306}:3306'
     environment:
-      MYSQL_ROOT_PASSWORD: 'redemrp'
-      MYSQL_DATABASE: 'redemrp'
-      MYSQL_USER: 'redemrp'
-      MYSQL_PASSWORD: 'redemrp'
+      MYSQL_ROOT_PASSWORD: ${MYSQL_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
       MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
     volumes:
       - './mysql:/var/lib/mysql'
-      - '/sql:/docker-entrypoint-initdb.d'
+      - './sql:/docker-entrypoint-initdb.d'
     networks:
       - fivem
     healthcheck:
-      test: ["CMD", "mysqladmin", "ping"]
+      test: "out=$$(mysqladmin ping -h localhost -P 3306 -u $${MYSQL_USER} --password=$${MYSQL_PASSWORD} 2>&1); echo $$out | grep 'mysqld is alive' || { echo $$out; exit 1; }"
       
 networks:
     fivem:

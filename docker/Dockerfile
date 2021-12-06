@@ -17,12 +17,14 @@ RUN wget -O- http://runtime.fivem.net/artifacts/fivem/build_proot_linux/master/$
  && wget -O- http://github.com/citizenfx/cfx-server-data/archive/${DATA_VER}.tar.gz \
         | tar xz --strip-components=1 -C opt/cfx-server-data \
     \
- && apk -p $PWD add tini
+ && apk -p $PWD add tini mysql-client
 
 ADD server.cfg opt/cfx-server-data
 ADD entrypoint usr/bin/entrypoint
+ADD wait-for-mysql usr/bin/wait-for-mysql
 
 RUN chmod +x /output/usr/bin/entrypoint
+RUN chmod +x /output/usr/bin/wait-for-mysql
 
 #================
 
@@ -49,6 +51,6 @@ EXPOSE 30120
 # Default to an empty CMD, so we can use it to add seperate args to the binary
 CMD [""]
 
-ENTRYPOINT ["/sbin/tini", "--", "/usr/bin/entrypoint"]
+ENTRYPOINT ["/bin/sh", "-c", "/usr/bin/wait-for-mysql && /sbin/tini -- /usr/bin/entrypoint"]
 
 HEALTHCHECK CMD curl --fail http://127.0.0.1:30120/info.json || exit 1
