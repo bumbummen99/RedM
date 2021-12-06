@@ -8,16 +8,18 @@ services:
     restart: always
     stdin_open: true
     tty: true
+    depends_on:
+      - 'mysql'
     volumes:
-      - "./resources:/config/resources"
-      - "./server.cfg:/root/server.cfg"
+      - './resources:/config/resources'
+      - './server.cfg:/root/server.cfg'
     networks:
       - fivem
     ports:
-      - "30120:30120"
-      - "30120:30120/udp"
+      - '30120:30120'
+      - '30120:30120/udp'
     environment:
-      CONFIG_ARGS: "+set gamename rdr3"
+      CONFIG_ARGS: '+set gamename rdr3'
       LICENSE_KEY: ${LICENSE_KEY}
       NO_LICENSE_KEY: ${NO_LICENSE_KEY}
       RCON_PASSWORD: ${RCON_PASSWORD}
