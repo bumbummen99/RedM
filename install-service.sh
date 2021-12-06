@@ -3,7 +3,7 @@
 # by Uli Köhler - https://techoverflow.net
 echo "Creating systemd service as /etc/systemd/system/redm.service"
 # Create systemd service file
-sudo cat >/etc/systemd/system/$SERVICENAME.service <<EOF
+sudo cat >/etc/systemd/system/redm.service <<EOF
 [Unit]
 Description=RedM
 Requires=docker.service
