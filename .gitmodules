@@ -46,3 +46,6 @@
 [submodule "resources/[redemrp]/redemrp_fishing"]
 	path = resources/[redemrp]/redemrp_fishing
 	url = https://github.com/RedEM-RP/redemrp_fishing.git
+[submodule "resources/[redemrp]/redemrp_quests"]
+	path = resources/[redemrp]/redemrp_quests
+	url = https://github.com/RedEM-RP/redemrp_quests
