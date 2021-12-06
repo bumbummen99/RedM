@@ -26,6 +26,7 @@ services:
       STEAM_API_KEY: ${STEAM_API_KEY}
   mysql:
     image: 'mysql:8.0'
+    command: --default-authentication-plugin=mysql_native_password
     ports:
       - '${FORWARD_DB_PORT:-3306}:3306'
     environment:
