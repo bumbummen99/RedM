@@ -51,6 +51,6 @@ EXPOSE 30120
 # Default to an empty CMD, so we can use it to add seperate args to the binary
 CMD [""]
 
-ENTRYPOINT ["/sbin/tini", "--", "/usr/bin/wait-for-mysql", "&&", "/usr/bin/entrypoint"]
+ENTRYPOINT ["/bin/sh", "-c", "/usr/bin/wait-for-mysql && /sbin/tini -- /usr/bin/entrypoint"]
 
 HEALTHCHECK CMD curl --fail http://127.0.0.1:30120/info.json || exit 1
