@@ -34,3 +34,6 @@
 [submodule "resources/[redemrp]/redemrp_menu_base"]
 	path = resources/[redemrp]/redemrp_menu_base
 	url = https://github.com/RedEM-RP/redemrp_menu_base.git
+[submodule "resources/[redemrp]/redemrp_progressbars"]
+	path = resources/[redemrp]/redemrp_progressbars
+	url = https://github.com/RedEM-RP/redemrp_progressbars.git
