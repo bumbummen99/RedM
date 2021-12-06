@@ -17,10 +17,13 @@ jobs:
         name: Create .env
         run: cp .env.example .env && echo "NO_LICENSE_KEY=true" >> .env && sed -i "s/RCONPassword/password/g" .env && sed -i "s/SteamAPIKey/${{ secrets.STEAM_API_KEY }}/g" .env
       - 
-        name: Run the image
+        name: Run the images
         run: docker-compose up -d
+      -
+        name: Wait a bit for the containers to run
+        run: sleep 60
       - 
-        name: Log the container
+        name: Log the containers
         run: docker-compose logs
       -
         name: Stop the container
