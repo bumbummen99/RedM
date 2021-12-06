@@ -49,3 +49,6 @@
 [submodule "resources/[redemrp]/redemrp_quests"]
 	path = resources/[redemrp]/redemrp_quests
 	url = https://github.com/RedEM-RP/redemrp_quests
+[submodule "resources/[redemrp]/redemrp_properties"]
+	path = resources/[redemrp]/redemrp_properties
+	url = https://github.com/RedEM-RP/redemrp_properties
