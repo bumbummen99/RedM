@@ -24,6 +24,9 @@ services:
       NO_LICENSE_KEY: ${NO_LICENSE_KEY}
       RCON_PASSWORD: ${RCON_PASSWORD}
       STEAM_API_KEY: ${STEAM_API_KEY}
+      MYSQL_DATABASE: 'redemrp'
+      MYSQL_USER: 'redemrp'
+      MYSQL_PASSWORD: 'redemrp'
   mysql:
     image: 'mysql:8.0'
     command: --default-authentication-plugin=mysql_native_password
