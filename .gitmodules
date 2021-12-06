@@ -1,5 +1,5 @@
-[submodule "resources/[esplugin_mysql]"]
-	path = resources/[esplugin_mysql]
+[submodule "resources/esplugin_mysql"]
+	path = resources/esplugin_mysql
 	url = https://github.com/RedEM-RP/esplugin_mysql.git
 [submodule "resources/mysql-async"]
 	path = resources/mysql-async
