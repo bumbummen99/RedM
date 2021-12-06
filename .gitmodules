@@ -31,3 +31,6 @@
 [submodule "resources/[redemrp]/redemrp_clothing"]
 	path = resources/[redemrp]/redemrp_clothing
 	url = https://github.com/RedEM-RP/redemrp_clothing.git
+[submodule "resources/[redemrp]/redemrp_menu_base"]
+	path = resources/[redemrp]/redemrp_menu_base
+	url = https://github.com/RedEM-RP/redemrp_menu_base.git
