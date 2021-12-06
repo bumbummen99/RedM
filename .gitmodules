@@ -1,8 +1,8 @@
 [submodule "resources/[esplugin_mysql]"]
 	path = resources/[esplugin_mysql]
 	url = https://github.com/RedEM-RP/esplugin_mysql.git
-[submodule "resources/[mysql-async]"]
-	path = resources/[mysql-async]
+[submodule "resources/mysql-async"]
+	path = resources/mysql-async
 	url = https://github.com/amakuu/mysql-async-temporary.git
 [submodule "resources/[redem]"]
 	path = resources/[redem]
