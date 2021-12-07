@@ -19,7 +19,7 @@ if [ ! -e "/root/server.cfg" ]; then
     cp -r /opt/cfx-server-data/server.cfg /root/server.cfg
 fi
 
-# Prepare config with ENV values
+# Prepare config with ENV values & snippets
 cp /root/server.cfg /config/server.cfg
 sed -i "s/{RCON_PASSWORD}/${RCON_PASSWORD}/g" /config/server.cfg
 sed -i "s/{STEAM_API_KEY}/${STEAM_API_KEY}/g" /config/server.cfg
@@ -27,6 +27,17 @@ sed -i "s/{MYSQL_DATABASE}/${MYSQL_DATABASE}/g" /config/server.cfg
 sed -i "s/{MYSQL_USER}/${MYSQL_USER}/g" /config/server.cfg
 sed -i "s/{MYSQL_PASSWORD}/${MYSQL_PASSWORD}/g" /config/server.cfg
 sed -i "s/{SERVER_NAME}/${SERVER_NAME}/g" /config/server.cfg
+
+for SNIPPET in /root/cfg/*.cfg; do
+  # Skip files that do not exist
+  if ! [ -f $SNIPPET ]; then
+    continue;
+  fi
+  
+  echo "Append cfg snippet $SNIPPET"
+  
+  cat $SNIPPET >> /config/server.cfg
+done
 
 if [ -z "$NO_ONESYNC" ]; then
     ONESYNC_ARGS="+set onesync on +set onesync_population true"
