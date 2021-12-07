@@ -28,7 +28,7 @@ git submodule foreach "cp *.sql $TMP || true"
 echo "Extracted all .sql files to TMP directory"
 
 # Process all files in the tmp dir
-for SQL in "$TMP/*.sql"; do
+for SQL in "$TMP"/*.sql; do
   # Skip files that do not exist
   if ! [ -f "$SQL" ]; then
     continue;
