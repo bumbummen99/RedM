@@ -1,6 +1,13 @@
 #!/usr/bin/env bash
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 
+# Load .env or default
+if [ -f "$SCRIPT_DIR/.env" ]; then
+  export $(cat $SCRIPT_DIR/.env | sed 's/#.*//g' | xargs)
+else
+  export $(cat $SCRIPT_DIR/.env.example | sed 's/#.*//g' | xargs)
+fi
+
 function hasDatabse() {
   local FILE=$1
   if grep -q "CREATE DATABASE" "$FILE" || grep -q "USE" "$FILE" ; then
@@ -10,6 +17,8 @@ function hasDatabse() {
   fi
 }
 
+echo "Default database is $MYSQL_DATABASE"
+
 # Remove old sql files
 rm $SCRIPT_DIR/sql/*.sql
 
@@ -18,15 +27,6 @@ echo "CREATE DATABASE IF NOT EXISTS \`$MYSQL_DATABASE\`;" > $SCRIPT_DIR/sql/0-cr
 echo "GRANT ALL PRIVILEGES ON $MYSQL_DATABASE.* TO '$MYSQL_USER'@'%';" >> $SCRIPT_DIR/sql/0-create-default-database.sql
 
 echo "Added default databse .sql"
-
-# Load .env or default
-if [ -f "$SCRIPT_DIR/.env" ]; then
-  export $(cat $SCRIPT_DIR/.env | sed 's/#.*//g' | xargs)
-else
-  export $(cat $SCRIPT_DIR/.env.example | sed 's/#.*//g' | xargs)
-fi
-
-echo "Default database is $MYSQL_DATABASE"
 
 # Special: Check if redem_roleplay exists and extract db
 if [ -d "$SCRIPT_DIR"/resources/\[redemrp\]/redem_roleplay ]; then
