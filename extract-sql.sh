@@ -29,25 +29,6 @@ echo "GRANT ALL PRIVILEGES ON essentialmode.* TO '$MYSQL_USER'@'%';" >> $SCRIPT_
 
 echo "Added default databse .sql"
 
-# Special: Check if redem_roleplay exists and extract db
-if [ -d "$SCRIPT_DIR"/resources/\[redemrp\]/redem_roleplay ]; then
-  echo "Extracting redem_roleplay sql..."
-  
-  for SQL in "$SCRIPT_DIR"/resources/\[redemrp\]/redem_roleplay/server/sql/*.sql; do
-    # Skip files that do not exist
-    if ! [ -f "$SQL" ]; then
-      continue;
-    fi
-
-    echo "Processing file $SQL"
-
-    # Copy the corrected SQL to the sql folder so it can be imported to initdb
-    cp "$SQL" "$SCRIPT_DIR/sql/1-$(basename -- $SQL)"
-  done
-  
-  echo "Done extracting redem_roleplay sql!"
-fi
-
 # Create a new tmp dir
 TMP=`mktemp -d -p "$SCRIPT_DIR"`
 
