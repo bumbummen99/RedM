@@ -44,7 +44,7 @@ services:
     networks:
       - fivem
     healthcheck:
-      test: "out=$$(mysqladmin ping -h localhost -P 3306 -u $${MYSQL_USER} --password=$${MYSQL_PASSWORD} 2>&1); echo $$out | grep 'mysqld is alive' || { echo $$out; exit 1; }"
+      test: ["CMD", "mysqladmin", "ping"]
       
 networks:
     fivem:
