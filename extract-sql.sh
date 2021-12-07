@@ -29,10 +29,10 @@ fi
 echo "Default database is $MYSQL_DATABASE"
 
 # Special: Check if redem_roleplay exists and extract db
-if [ -d "$SCRIPT_DIR/resources/\[redemrp\]/redem_roleplay" ]; then
+if [ -d "$SCRIPT_DIR"/resources/\[redemrp\]/redem_roleplay ]; then
   echo "Extracting redem_roleplay sql..."
   
-  for SQL in "$TMP"/resources/\[redemrp\]/redem_roleplay/server/sql/*.sql; do
+  for SQL in "$SCRIPT_DIR"/resources/\[redemrp\]/redem_roleplay/server/sql/*.sql; do
     # Skip files that do not exist
     if ! [ -f "$SQL" ]; then
       continue;
