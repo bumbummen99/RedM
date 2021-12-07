@@ -10,6 +10,8 @@ jobs:
       - 
         name: Clone repository
         uses: actions/checkout@v2
+        with:
+          submodules: true
       -
         name: Extract SQL
         run: ./maintenance/extract-sql.sh
