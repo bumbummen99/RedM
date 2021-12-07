@@ -26,7 +26,7 @@ git submodule foreach "cp *.sql $TMP || true"
 # Process all files in the tmp dir
 for SQL in "$TMP/*.sql"; do
   # Check if the SQL does miss the databse
-  if [ ! hasDatabase $SQL ]; then
+  if ! hasDatabse $SQL ; then
     echo -e "USE $MYSQL_DATABASE\n$(cat $SQL)" > $SQL
   fi
   
