@@ -10,6 +10,9 @@ function hasDatabse() {
   fi
 }
 
+# Remove old sql files
+rm $SCRIPT_DIR/sql/*.sql
+
 # Load .env or default
 if [ -f "$SCRIPT_DIR/.env" ]; then
   export $(cat $SCRIPT_DIR/.env | sed 's/#.*//g' | xargs)
