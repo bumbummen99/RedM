@@ -58,9 +58,9 @@ rm -rf "$TMP"
 echo "Removed TMP directoy."
 
 # Write sql to create the default database
-echo "CREATE DATABASE IF NOT EXISTS \`$MYSQL_DATABASE\`;" > $SCRIPT_DIR/sql/0-create-default-database.sql
-echo "GRANT ALL PRIVILEGES ON $MYSQL_DATABASE.* TO '$MYSQL_USER'@'%';" >> $SCRIPT_DIR/sql/0-create-default-database.sql
+#echo "CREATE DATABASE IF NOT EXISTS \`$MYSQL_DATABASE\`;" > $SCRIPT_DIR/sql/0-create-default-database.sql
+#echo "GRANT ALL PRIVILEGES ON $MYSQL_DATABASE.* TO '$MYSQL_USER'@'%';" >> $SCRIPT_DIR/sql/0-create-default-database.sql
 
-echo "Added default databse .sql"
+#echo "Added default databse .sql"
 
-echo "Done! You can start the server now."
+echo "Done! You can import the sql now."
