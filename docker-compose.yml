@@ -12,6 +12,7 @@ services:
       - 'mysql'
     volumes:
       - './resources:/config/resources'
+      - '/cfg:/root/cfg'
       - './server.cfg:/root/server.cfg'
     networks:
       - fivem
