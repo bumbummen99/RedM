@@ -54,7 +54,7 @@ for SQL in "$TMP"/*.sql; do
   fi
   
   # Copy the corrected SQL to the sql folder so it can be imported to initdb
-  cp "$SQL" "$SCRIPT_DIR/sql/2-$(basename -- $SQL)"
+  cp "$SQL" "$SCRIPT_DIR/sql/1-$(basename -- $SQL)"
 done
 
 echo "All .sql files processed!"
