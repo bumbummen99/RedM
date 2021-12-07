@@ -17,6 +17,8 @@ else
   export $(cat $SCRIPT_DIR/.env.example | sed 's/#.*//g' | xargs)
 fi
 
+echo "Default database is $MYSQL_DATABASE"
+
 # Create a new tmp dir
 TMP=`mktemp -d -p "$SCRIPT_DIR"`
 
