@@ -12,7 +12,7 @@ jobs:
         uses: actions/checkout@v2
       -
         name: Extract SQL
-        run: ./extract-sql.sh
+        run: ./maintenance/extract-sql.sh
       -
         name: Commit the changes
         run: |
