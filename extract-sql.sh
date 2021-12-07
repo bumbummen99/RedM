@@ -44,7 +44,7 @@ for SQL in "$TMP"/*.sql; do
   fi
   
   # Copy the corrected SQL to the sql folder so it can be imported to initdb
-  cp "$SQL" "$SCRIPT_DIR/sql/$(basename -- $SQL)"
+  cp "$SQL" "$SCRIPT_DIR/sql/1-$(basename -- $SQL)"
 done
 
 echo "All .sql files processed!"
@@ -52,4 +52,11 @@ echo "All .sql files processed!"
 # Remove the tmp dir
 rm -rf "$TMP"
 
-echo "Removed TMP directoy. Done!"
+echo "Removed TMP directoy."
+
+# Write sql to create the default database
+echo "CREATE DATABSE IF NOT EXISTS $MYSQL_DATABASE;" > $SCRIPT_DIR/sql/0-create-default-database.sql
+
+echo "Added default databse .sql"
+
+echo "Done! You can start the server now."
