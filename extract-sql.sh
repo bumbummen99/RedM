@@ -12,9 +12,9 @@ function hasDatabse() {
 
 # Load .env or default
 if [ -f "$SCRIPT_DIR/.env" ]; then
-  export $(cat $SCRIPT_DIR/.env | xargs)
+  export $(cat $SCRIPT_DIR/.env | sed 's/#.*//g' | xargs)
 else
-  export $(cat $SCRIPT_DIR/.env.example | xargs)
+  export $(cat $SCRIPT_DIR/.env.example | sed 's/#.*//g' | xargs)
 fi
 
 # Create a new tmp dir
