@@ -1,3 +1,4 @@
+USE 
 -- phpMyAdmin SQL Dump
 -- version 4.5.4.1
 -- http://www.phpmyadmin.net
@@ -9,8 +10,6 @@
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
-
-USE redemrp;
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;

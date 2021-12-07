@@ -1,3 +1,4 @@
+USE 
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -10,7 +11,7 @@ SET time_zone = "+00:00";
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
 /*!40101 SET NAMES utf8mb4 */;
 
-USE redemrp;
+
 
 CREATE TABLE `clothes` (
   `identifier` varchar(40) NOT NULL,
