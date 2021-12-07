@@ -20,5 +20,6 @@ jobs:
         run: |
           git config --global user.name 'GitHub Action'
           git config --global user.email 'noreply@github.com'
+          git add .
           git commit -am "Extracted SQL"
           git push
