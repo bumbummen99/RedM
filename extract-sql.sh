@@ -26,7 +26,7 @@ git submodule foreach "cp *.sql $TMP || true"
 # Process all files in the tmp dir
 for SQL in "$TMP/*.sql"; do
   # Skip files that do not exist
-  if ! -e "$SQL" ; then
+  if ! [ -f "$SQL" ]; then
     continue;
   fi
   
