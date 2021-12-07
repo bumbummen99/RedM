@@ -45,6 +45,8 @@ for SQL in "$TMP/*.sql"; do
   cp "$SQL" "$SCRIPT_DIR/sql/$(basename -- $SQL)"
 done
 
+echo "All .sql files processed!"
+
 # Remove the tmp dir
 rm -rf "$TMP"
 
