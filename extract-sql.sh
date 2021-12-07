@@ -25,13 +25,18 @@ git submodule foreach "cp *.sql $TMP || true"
 
 # Process all files in the tmp dir
 for SQL in "$TMP/*.sql"; do
+  # Skip files that do not exist
+  if ! -e "$SQL" ; then
+    continue;
+  fi
+  
   # Check if the SQL does miss the databse
   if ! hasDatabse $SQL ; then
     echo -e "USE $MYSQL_DATABASE\n$(cat $SQL)" > $SQL
   fi
   
   # Copy the corrected SQL to the sql folder so it can be imported to initdb
-  cp $SQL $SCRIPT_DIR/sql/
+  cp "$SQL" "$SCRIPT_DIR/sql/$(basename -- $SQL)"
 done
 
 # Remove the tmp dir
