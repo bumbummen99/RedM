@@ -43,7 +43,7 @@ for SQL in "$TMP"/*.sql; do
   
   # Check if the SQL does miss the databse
   if ! hasDatabse $SQL ; then
-    echo -e "USE $MYSQL_DATABASE\n$(cat $SQL)" > $SQL
+    echo -e "USE $MYSQL_DATABASE;\n$(cat $SQL)" > $SQL
   fi
   
   # Copy the corrected SQL to the sql folder so it can be imported to initdb

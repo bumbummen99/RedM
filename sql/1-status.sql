@@ -1,4 +1,4 @@
-USE redemrp
+USE redemrp;
 CREATE TABLE `status` (
 	`id` INT(11) NOT NULL AUTO_INCREMENT,
 	`identifier` VARCHAR(50) NOT NULL DEFAULT '0',
