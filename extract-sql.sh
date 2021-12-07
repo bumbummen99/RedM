@@ -3,7 +3,7 @@ SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 
 function hasDatabse() {
   local FILE=$1
-  if [ grep -q "CREATE DATABASE" "$FILE" ] || [ grep -q "USE" "$FILE" ]; then
+  if grep -q "CREATE DATABASE" "$FILE" || grep -q "USE" "$FILE" ; then
     true
   else
     false
