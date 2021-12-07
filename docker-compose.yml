@@ -13,7 +13,7 @@ services:
     volumes:
       - './resources:/config/resources'
       - '/cfg:/root/cfg'
-#      - './server.cfg:/root/server.cfg'
+#      - './server.cfg:/root/server.cfg' Use this for your own cfg template
     networks:
       - fivem
     ports:
