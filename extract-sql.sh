@@ -20,8 +20,12 @@ fi
 # Create a new tmp dir
 TMP=`mktemp -d -p "$SCRIPT_DIR"`
 
+echo "Create TMP directory at $TMP"
+
 # Extract all SQL to the tmp dir
 git submodule foreach "cp *.sql $TMP || true"
+
+echo "Extracted all .sql files to TMP directory"
 
 # Process all files in the tmp dir
 for SQL in "$TMP/*.sql"; do
@@ -29,6 +33,8 @@ for SQL in "$TMP/*.sql"; do
   if ! [ -f "$SQL" ]; then
     continue;
   fi
+  
+  echo "Processing file $SQL"
   
   # Check if the SQL does miss the databse
   if ! hasDatabse $SQL ; then
@@ -41,3 +47,5 @@ done
 
 # Remove the tmp dir
 rm -rf "$TMP"
+
+echo "Removed TMP directoy. Done!"
