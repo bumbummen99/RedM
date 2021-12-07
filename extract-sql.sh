@@ -58,7 +58,7 @@ rm -rf "$TMP"
 echo "Removed TMP directoy."
 
 # Write sql to create the default database
-echo "CREATE DATABSE IF NOT EXISTS $MYSQL_DATABASE;" > $SCRIPT_DIR/sql/0-create-default-database.sql
+echo "CREATE DATABASE IF NOT EXISTS `$MYSQL_DATABASE`;" > $SCRIPT_DIR/sql/0-create-default-database.sql
 
 echo "Added default databse .sql"
 
