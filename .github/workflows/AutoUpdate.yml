@@ -16,13 +16,18 @@ jobs:
           submodules: true
       -
         name: Install required dependencies
-        run: cd maintenance/latest-version/ && npm i
+        run: |
+          cd maintenance/latest-version/
+          npm i
       -
         name: Get & update FiveM
         run: |
           OUTPUT=$(node maintenance/latest-version/index.js)
+          echo "Received build info:  \"$OUTPUT\""
           BUILD=$(echo $OUTPUT | grep -oP '(?<=Build: \")[^\"]*')
+          echo "Extracted build:  \"$BUILD\""
           COMMIT=$(echo $OUTPUT | grep -oP '(?<=COMMIT: \")[^\"]*')
+          echo "Extracted commit:  \"$COMMIT\""
           sed -i "s/FIVEM_NUM=.*/FIVEM_NUM=$BUILD/" .env.example
           sed -i "s/FIVEM_VER=.*/FIVEM_VER=$COMMIT/" .env.example
           sed -i "s/ARG FIVEM_NUM=.*/ARG FIVEM_NUM=$BUILD/" docker/Dockerfile
