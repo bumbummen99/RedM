@@ -35,7 +35,14 @@ You can also run the setup as a `systemd` service. To do so simply run the provi
 ```
 ./maintenance/install-service.sh
 ```
-This will create and enable a .service file for the docker-compose setup. Make sure that restarting is disabled in the compose as that will be handled by systemd.
+This will create and enable a .service file for the docker-compose setup. Make sure that restarting is disabled in the compose as that will be handled by systemd. Once the service is installed you can use regular service command provided by distro
+```
+service redm start
+service redm restart
+service redm stop
+service redm status
+watch -n1 service redm status
+```
 
 ## Pro tips
 If the default server.cfg does for some reason not accommodate your needs you can provide your own template. Simply copy the `server.cfg` file from the `docker` subfolder and adjust it to your needs. Once done you can link it in the docker-compose.yml.
