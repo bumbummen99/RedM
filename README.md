@@ -65,7 +65,7 @@ In order to install resources you will have to enable and link the `resources` v
 You can install resources by copy and pasting them in yor `resources` volume directory, but since it is better to manage them using a vcs like git it is preferred to install them by cloning them, using a package manager or simply submodules in a resources master repository - it is open to you how you do it.
 
 ### SQL files
-Sometimes a resource does require a specific database setup. This setup will automatically search all resources **root** folder and try to extract your plugins .sql files. These files will then be applied to your MySQL database by using the initdb feature of the entrypoint - this will only work on the first run when there is **no database** in order to initialize it. If you install resources later on you will have to apply database schemes manaually.
+Sometimes a resource does require a specific database setup. This setup will automatically search all resources **root (where fxmanifest.lua or __resource.lua is)** folder and try to extract your plugins .sql files. These files will then be applied to your MySQL database by using the initdb feature of the entrypoint - this will only work on the first run when there is **no database** in order to initialize it. If you install resources later on you will have to apply database schemes manaually.
 
 **This does only work for static sql**. If your resource does populate or create its database in code you will have to run that routine.
 
