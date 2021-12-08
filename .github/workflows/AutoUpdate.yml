@@ -1,0 +1,42 @@
+name: AutoUpdate
+
+on:
+  schedule:
+    - cron: "*/15 * * * *"
+
+jobs:
+  docker:
+    runs-on: ubuntu-latest
+    steps:
+      - 
+        name: Clone repository
+        uses: actions/checkout@v2
+        with:
+          submodules: true
+      -
+        name: Install required dependencies
+        run: cd ./maintenance/latest-build && npm i
+      -
+        name: Get & update FiveM
+        run: |
+          OUTPUT=$(node ./maintenance/latest-build/index.js)
+          BUILD=$(echo $OUTPUT | grep -oP '(?<=Build: \")[^\"]*')
+          COMMIT=$(echo $OUTPUT | grep -oP '(?<=COMMIT: \")[^\"]*')
+          sed -i "s/FIVEM_NUM=.*/FIVEM_NUM=$BUILD/" .env.example
+          sed -i "s/FIVEM_VER=.*/FIVEM_VER=$COMMIT/" .env.example
+          sed -i "s/ARG FIVEM_NUM=.*/ARG FIVEM_NUM=$BUILD/" docker/Dockerfile
+          sed -i "s/ARG FIVEM_VER=.*/ARG FIVEM_VER=$COMMIT/" docker/Dockerfile
+      -
+        name: Get & update CitizenX data
+        run: |
+          OUTPUT=$(git ls-remote https://github.com/citizenfx/cfx-server-data.git HEAD)
+          COMMIT=$(echo $OUTPUT | grep -oP '(^[\w]*)')
+          sed -i "s/ARG DATA_VER=.*/ARG DATA_VER=$COMMIT/" docker/Dockerfile
+      -
+        name: Commit the changes
+        run: |
+          git config --global user.name 'GitHub Action'
+          git config --global user.email 'noreply@github.com'
+          git add .
+          git commit -am "Updated FiveM Build & Data"
+          git push
