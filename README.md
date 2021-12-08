@@ -3,6 +3,11 @@ This repository contains a setup for a dockerized RedM Server that can be fully 
 
 # Table of contents
 - [Getting Started](#getting-started)
+  - [Installation](#installation)
+  - [Configuration](#configuration)
+  - [Starting](#starting)
+    - [Service](#service)
+  - [Pro tips](#pro-tips)
 
 # Getting Started
 The following chapter will explain how to install, configure and start the dockerized RedM server.
