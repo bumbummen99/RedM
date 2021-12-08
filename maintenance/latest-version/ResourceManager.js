@@ -1,5 +1,10 @@
 export default class ResourceManager {
-  constructor(basePath) {
-    this._basePath = basePath
+  constructor(definitionFile, resourcesDirectory) {
+    this._definition = parseDefinition(definitionFile)
+    this._definition = resourcesDirectory
+  }
+  
+  static async parseDefinition(definitionFile) {
+    // implement
   }
 }
