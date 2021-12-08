@@ -40,6 +40,7 @@ jobs:
           sed -i "s/ARG DATA_VER=.*/ARG DATA_VER=$COMMIT/" docker/Dockerfile
       -
         name: Commit the changes
+        continue-on-error: true
         run: |
           git config --global user.name 'GitHub Action'
           git config --global user.email 'noreply@github.com'
