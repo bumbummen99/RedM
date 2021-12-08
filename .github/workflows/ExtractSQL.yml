@@ -18,8 +18,12 @@ jobs:
       -
         name: Commit the changes
         run: |
-          git config --global user.name 'GitHub Action'
-          git config --global user.email 'noreply@github.com'
-          git add .
-          git commit -am "Extracted SQL"
-          git push
+          if [ -n "$(git status --porcelain)" ]; then
+            git config --global user.name 'GitHub Action'
+            git config --global user.email 'noreply@github.com'
+            git add .
+            git commit -am "Extracted SQL"
+            git push
+          else
+            echo "No changes, skipping."
+          fi
