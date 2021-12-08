@@ -39,8 +39,17 @@ jobs:
           COMMIT=$(echo $OUTPUT | grep -oP '(^[\w]*)')
           sed -i "s/ARG DATA_VER=.*/ARG DATA_VER=$COMMIT/" docker/Dockerfile
       -
+        name: Detect changes
+        if: 
+        run: |
+          if git diff --exit-code; then
+            echo "::set-env name=has_changes::true"
+          else
+            echo "::set-env name=has_changes::false"
+          fi
+      -
         name: Commit the changes
-        continue-on-error: true
+        if: ${{ env.has_changes == 'true' }}
         run: |
           git config --global user.name 'GitHub Action'
           git config --global user.email 'noreply@github.com'
