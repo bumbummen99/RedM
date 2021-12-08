@@ -4,6 +4,7 @@ ARG DATA_VER=44fc68d7ee1b94ad67a211a6ff8234ce4ff760c8
 
 FROM spritsail/alpine:3.14 as builder
 
+ARG FIVEM_NUM
 ARG FIVEM_VER
 ARG DATA_VER
 
