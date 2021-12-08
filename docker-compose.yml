@@ -4,6 +4,10 @@ services:
   fivem:
     build:
       context: ./docker
+      args:
+        FIVEM_NUM: ${FIVEM_NUM}
+        FIVEM_VER: ${FIVEM_VER}
+        DATA_VER: ${DATA_VER}
     container_name: fivem
     restart: always
     stdin_open: true
