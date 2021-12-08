@@ -1,5 +1,5 @@
-ARG FIVEM_NUM=5054
-ARG FIVEM_VER=5054-4a1ac81bcda9214e97aa614833c7467473189ff2
+ARG FIVEM_NUM=5058
+ARG FIVEM_VER=6f13a461c60095aa08bf27edfd0ce53f57eff6c0
 ARG DATA_VER=44fc68d7ee1b94ad67a211a6ff8234ce4ff760c8
 
 FROM spritsail/alpine:3.14 as builder
@@ -9,7 +9,7 @@ ARG DATA_VER
 
 WORKDIR /output
 
-RUN wget -O- http://runtime.fivem.net/artifacts/fivem/build_proot_linux/master/${FIVEM_VER}/fx.tar.xz \
+RUN wget -O- http://runtime.fivem.net/artifacts/fivem/build_proot_linux/master/${FIVEM_NUM}-${FIVEM_VER}/fx.tar.xz \
         | tar xJ --strip-components=1 \
             --exclude alpine/dev --exclude alpine/proc \
             --exclude alpine/run --exclude alpine/sys \
@@ -40,7 +40,7 @@ LABEL maintainer="Spritsail <fivem@spritsail.io>" \
       org.label-schema.url="https://fivem.net" \
       org.label-schema.description="FiveM is a modification for Grand Theft Auto V enabling you to play multiplayer on customized dedicated servers." \
       org.label-schema.version=${FIVEM_NUM} \
-      io.spritsail.version.fivem=${FIVEM_VER} \
+      io.spritsail.version.fivem=${FIVEM_NUM}-${FIVEM_VER} \
       io.spritsail.version.fivem_data=${DATA_VER}
 
 COPY --from=builder /output/ /
