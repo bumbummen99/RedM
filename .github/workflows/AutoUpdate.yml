@@ -26,7 +26,7 @@ jobs:
           echo "Received build info:  \"$OUTPUT\""
           BUILD=$(echo $OUTPUT | grep -oP '(?<=Build: \")[^\"]*')
           echo "Extracted build:  \"$BUILD\""
-          COMMIT=$(echo $OUTPUT | grep -oP '(?<=COMMIT: \")[^\"]*')
+          COMMIT=$(echo $OUTPUT | grep -oP '(?<=Commit: \")[^\"]*')
           echo "Extracted commit:  \"$COMMIT\""
           sed -i "s/FIVEM_NUM=.*/FIVEM_NUM=$BUILD/" .env.example
           sed -i "s/FIVEM_VER=.*/FIVEM_VER=$COMMIT/" .env.example
