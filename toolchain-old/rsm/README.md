@@ -1,3 +1,0 @@
-# RedM Server Manager
-
-Todo
