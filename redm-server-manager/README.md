@@ -1,7 +1,7 @@
-oclif-hello-world
+RedM Server Manager
 =================
 
-oclif example Hello World CLI
+A CLI server manager written for the dockerized FiveM server.
 
 [![oclif](https://img.shields.io/badge/cli-oclif-brightgreen.svg)](https://oclif.io)
 [![Version](https://img.shields.io/npm/v/oclif-hello-world.svg)](https://npmjs.org/package/oclif-hello-world)
