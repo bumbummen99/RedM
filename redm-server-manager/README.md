@@ -4,10 +4,10 @@ RedM Server Manager
 A CLI server manager written for the dockerized FiveM server.
 
 [![oclif](https://img.shields.io/badge/cli-oclif-brightgreen.svg)](https://oclif.io)
-[![Version](https://img.shields.io/npm/v/oclif-hello-world.svg)](https://npmjs.org/package/oclif-hello-world)
-[![CircleCI](https://circleci.com/gh/oclif/hello-world/tree/main.svg?style=shield)](https://circleci.com/gh/oclif/hello-world/tree/main)
-[![Downloads/week](https://img.shields.io/npm/dw/oclif-hello-world.svg)](https://npmjs.org/package/oclif-hello-world)
-[![License](https://img.shields.io/npm/l/oclif-hello-world.svg)](https://github.com/oclif/hello-world/blob/main/package.json)
+[![Version](https://img.shields.io/npm/v/redm-server-manager.svg)](https://npmjs.org/package/redm-server-manager)
+[![CircleCI](https://circleci.com/gh/Timeless-Outlaws/RedM-Server-Manager/tree/main.svg?style=shield)](https://circleci.com/gh/Timeless-Outlaws/RedM-Server-Manager/tree/main)
+[![Downloads/week](https://img.shields.io/npm/dw/redm-server-manager.svg)](https://npmjs.org/package/redm-server-manager)
+[![License](https://img.shields.io/npm/l/redm-server-manager.svg)](https://github.com/Timeless-Outlaws/RedM-Server-Manager/blob/main/package.json)
 
 <!-- toc -->
 * [Usage](#usage)
