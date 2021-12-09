@@ -37,9 +37,9 @@ docker-compose up
 You can also append the `-d` flag to start it daemonized and `docker-compose down` to stop it. It is **absolutely required** that you do understand the basics of docker and docker-compose!
 
 ### Service
-You can also run the setup as a `systemd` service. To do so simply run the provided maintenance script.
+You can also run the setup as a `systemd` service. To do so simply run the provided toolchain script.
 ```
-./maintenance/install-service.sh
+./toolchain/install-service.sh
 ```
 This will create and enable a .service file for the docker-compose setup. Make sure that restarting is disabled in the compose as that will be handled by systemd. Once the service is installed you can use regular service command provided by distro
 ```

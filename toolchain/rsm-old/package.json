@@ -1,7 +1,7 @@
 {
-  "name": "latest-version",
+  "name": "rsm",
   "version": "1.0.0",
-  "description": "Extract the latest FiveM Build and Commit from their Build-Server",
+  "description": "Manager for the RedM server.",
   "main": "index.js",
   "type": "module",
   "scripts": {

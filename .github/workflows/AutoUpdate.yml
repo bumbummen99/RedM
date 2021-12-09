@@ -17,12 +17,12 @@ jobs:
       -
         name: Install required dependencies
         run: |
-          cd maintenance/latest-version/
+          cd toolchain/latest-version/
           npm i
       -
         name: Get & update FiveM
         run: |
-          OUTPUT=$(node maintenance/latest-version/index.js)
+          OUTPUT=$(node toolchain/latest-version/index.js)
           echo "Received build info:  \"$OUTPUT\""
           BUILD=$(echo $OUTPUT | grep -oP '(?<=Build: \")[^\"]*')
           echo "Extracted build:  \"$BUILD\""
